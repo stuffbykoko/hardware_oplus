@@ -19,7 +19,10 @@ public class OplusFeatureConfigManager {
         return sInstance;
     }
 
-    public boolean hasFeature(String featureName) {
+    public boolean hasFeature(String name) {
+        if ("oplus.hardware.type.rear_IR".equals(name)) {
+            return true;
+        }
         return false;
     }
 
