@@ -26,6 +26,14 @@ DisplayFeature::DisplayFeature() : mDeviceInfo(nullptr) {
         ALOGD("device name: %s", deviceName.c_str());
     }
 
+    // OnePlus Nord 4
+    if (deviceName == "avalon") {
+        mDeviceInfo = &CONFIG_OPN4;
+        SetProperty("sys.sun.feature.display.dc_alias_one_pulse", "true");
+        SetProperty("sys.sun.feature.touch_gesture.bit", "78068");
+        SetProperty("sys.sun.feature.touch_gesture.oplus", "true");
+        goto END;
+    }
     // OnePlus 13
     if (deviceName == "dodge") {
         mDeviceInfo = &CONFIG_OP13;

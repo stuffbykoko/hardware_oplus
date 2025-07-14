@@ -26,6 +26,11 @@ Battery::Battery() : mDeviceInfo(nullptr) {
         ALOGD("device name: %s, prjname: %d, rf version: %d", deviceName.c_str(), prjname, rfVersion);
     }
 
+    // OnePlus Nord 4
+    if (deviceName == "avalon") {
+        mDeviceInfo = &CONFIG_OPN4;
+        goto END;
+    }
     // OnePlus 13
     if (deviceName == "dodge") {
         mDeviceInfo = &CONFIG_OP13;
